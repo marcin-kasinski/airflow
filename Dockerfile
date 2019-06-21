@@ -1,4 +1,4 @@
-FROM python:3.6.3
+FROM python:3.7.3-stretch
 # supervisord setup                       
 RUN apt-get update && apt-get install -y supervisor                       
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
