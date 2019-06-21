@@ -1,10 +1,10 @@
-FROM python:3.7.3-stretch
+FROM puckel/docker-airflow
 # supervisord setup                       
-RUN apt-get update && apt-get install -y supervisor                       
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#RUN apt-get update && apt-get install -y supervisor                       
+#COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Airflow setup                       
-ENV AIRFLOW_HOME=/app/airflow
-RUN pip install apache-airflow                       
+#ENV AIRFLOW_HOME=/app/airflow
+#RUN pip install apache-airflow                       
 COPY /dags/response_rate_etl.py $AIRFLOW_HOME/dags/
 RUN airflow initdb
 EXPOSE 8080
