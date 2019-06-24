@@ -5,7 +5,8 @@ FROM puckel/docker-airflow
 # Airflow setup
 #ENV AIRFLOW_HOME=/app/airflow
 USER root
-RUN pip install docker
+RUN pip install docker \
+    && pip install kubernetes
 USER airflow
 #RUN pip install apache-airflow                       
 #COPY /dags/response_rate_etl.py $AIRFLOW_HOME/dags/
