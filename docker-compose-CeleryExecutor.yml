@@ -17,7 +17,6 @@ services:
 
     webserver:
         image: puckel/docker-airflow:1.10.3
-        image: marcinkasinski/airflow
         restart: always
         depends_on:
             - postgres
@@ -42,6 +41,7 @@ services:
             interval: 30s
             timeout: 30s
             retries: 3
+
     flower:
         image: puckel/docker-airflow:1.10.3
         restart: always
@@ -71,7 +71,7 @@ services:
             # - POSTGRES_PASSWORD=airflow
             # - POSTGRES_DB=airflow
             # - REDIS_PASSWORD=redispass
-        command: scheduler -r 60
+        command: scheduler
 
     worker:
         image: puckel/docker-airflow:1.10.3
