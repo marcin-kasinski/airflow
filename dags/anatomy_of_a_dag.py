@@ -21,7 +21,7 @@ dag = DAG(
 
 # t0 and t1 are examples of tasks created by instantiating operators
 t0 = TimeDeltaSensor(
-    task_id='wait_20_seconds',
+    task_id='wait_60_seconds',
     delta=timedelta(seconds=60),
     dag=dag)
 
