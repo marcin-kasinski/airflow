@@ -28,7 +28,8 @@ class MyFirstPlugin(AirflowPlugin):
 
 dag = DAG('my_test_dag', description='Another tutorial DAG',
           schedule_interval='0 12 * * *',
-          start_date=datetime(2017, 3, 20), catchup=False)
+          start_date=datetime(2017, 3, 20), catchup=False
+          )
 
 dummy_task = DummyOperator(task_id='dummy_task', dag=dag)
 

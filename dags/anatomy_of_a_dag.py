@@ -17,7 +17,9 @@ dag = DAG(
     dag_id='anatomy_of_a_dag3',
     description="This describes my DAG",
     default_args=default_args,
-    schedule_interval=timedelta(days=1))   # This is a daily DAG.
+    #schedule_interval=timedelta(days=1)
+    schedule_interval='57 9 * * *',
+    )   # This is a daily DAG.
 
 # t0 and t1 are examples of tasks created by instantiating operators
 t0 = TimeDeltaSensor(
