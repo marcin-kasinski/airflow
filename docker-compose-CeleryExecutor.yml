@@ -17,6 +17,7 @@ services:
 
     webserver:
         image: puckel/docker-airflow:1.10.3
+        image: marcinkasinski/airflow
         restart: always
         depends_on:
             - postgres
@@ -41,7 +42,6 @@ services:
             interval: 30s
             timeout: 30s
             retries: 3
-
     flower:
         image: puckel/docker-airflow:1.10.3
         restart: always
