@@ -1,7 +1,26 @@
 '''
+sudo apt install -y docker-ce
+
+sudo apt install -y docker-compose
+
 sudo apt install -y python-pip
+
 pip install apache-airflow
 pip install docker
+
+
+remove docker
+
+To identify what installed package you have:
+
+dpkg -l | grep -i docker
+
+#Remove
+
+sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-compose golang-docker-credential-helpers docker-ce-cli python-dockerpty
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose golang-docker-credential-helpers docker-ce-cli python-dockerpty
+
+
 '''
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
@@ -19,7 +38,7 @@ default_args = {
         'retry_delay'           : timedelta(minutes=5)
 }
 
-with DAG('docker_dag', default_args=default_args, schedule_interval="5 * * * *", catchup=False) as dag:
+with DAG('docker_dag', default_args=default_args, schedule_interval="*/5 * * * *", catchup=False) as dag:
         t1 = BashOperator(
                 task_id='print_current_date',
                 bash_command='date'

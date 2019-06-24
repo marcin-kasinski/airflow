@@ -12,6 +12,10 @@ services:
         image: airflow
         restart: always
         user: root
+        
+        
+        logging:
+            driver: fluentd
         depends_on:
             - postgres
         environment:
