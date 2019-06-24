@@ -6,3 +6,4 @@ apt install -y python-pip
 docker stop airflow |true && docker rm airflow |true && docker run --restart=always -d -p 8080:8080 --name airflow marcinkasinski/airflow \
 && docker logs -f airflow
    
+docker-compose -f docker-compose-CeleryExecutor.yml up -d   

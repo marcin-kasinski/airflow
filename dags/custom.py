@@ -37,7 +37,7 @@ operator_task = MyFirstOperator(my_operator_param='This is a test.',
 operator_task2 = MyFirstOperator(my_operator_param='This is a test2.',
                                 task_id='my_first_operator_task2', dag=dag)
 
-operator_task2 = MyFirstOperator(my_operator_param='This is a test3.',
+operator_task3 = MyFirstOperator(my_operator_param='This is a test3.',
                                 task_id='my_first_operator_task3', dag=dag)
 
 dummy_task >> operator_task
