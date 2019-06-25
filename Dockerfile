@@ -8,7 +8,7 @@ USER root
 RUN pip install docker \
     && pip install kubernetes \
     && pip install psycopg2-binary \
-    && addgroup docker \
+    && addgroup docker --uid 999 \
     && usermod -a -G docker airflow
 USER airflow
 #RUN pip install apache-airflow                       
