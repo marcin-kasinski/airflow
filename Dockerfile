@@ -14,6 +14,7 @@ RUN pip install docker \
     && apt-get install -y tzdata
 
 USER airflow
+ENV TZ=Europe/Warsaw
 #RUN pip install apache-airflow                       
 #COPY /dags/response_rate_etl.py $AIRFLOW_HOME/dags/
 #RUN airflow initdb
