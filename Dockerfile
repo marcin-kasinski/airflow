@@ -11,7 +11,8 @@ RUN pip install docker \
     && pip install kubernetes \
     && pip install psycopg2-binary \
     && apt-get update \
-    && apt-get install -y tzdata
+    && apt-get install -y tzdata \
+    && sed -i -e 's/default_timezone = utc/default_timezone = Europe\/Warsaw/g' /usr/local/airflow/airflow.cfg
 
 USER airflow
 ENV TZ=Europe/Warsaw
