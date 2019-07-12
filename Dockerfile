@@ -18,6 +18,10 @@ RUN pip install docker \
     && sed -i -e 's/default_timezone = utc/default_timezone = Europe\/Warsaw/g' /usr/local/airflow/airflow.cfg
 
 USER airflow
+
+RUN pip install prometheus_client \
+    && pip install airflow-exporter
+
 ENV TZ=Europe/Warsaw
 #RUN pip install apache-airflow                       
 #COPY /dags/response_rate_etl.py $AIRFLOW_HOME/dags/
