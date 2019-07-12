@@ -14,7 +14,7 @@ RUN pip install docker \
     && pip install kubernetes \
     && pip install psycopg2-binary \
     #http://<your_airflow_host_and_port>/admin/metrics/ \
-    && pip install --user /tmp/airflow-exporter \
+    && pip install airflow-exporter \
     && rm -rf /tmp/airflow-exporter \
     && apt-get update \
     && apt-get install -y tzdata \
