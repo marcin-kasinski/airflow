@@ -19,8 +19,8 @@ RUN pip install docker \
 
 USER airflow
 
-RUN pip install prometheus_client \
-    && pip install airflow-exporter
+#RUN pip install prometheus_client \
+#    && pip install airflow-exporter
 
 ENV TZ=Europe/Warsaw
 #RUN pip install apache-airflow                       
